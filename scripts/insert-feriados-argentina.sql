@@ -1,0 +1,72 @@
+-- Crear tabla y cargar calendario academico
+
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS public.actividades_fijas (
+	id SERIAL PRIMARY KEY,
+	titulo TEXT NOT NULL,
+	fecha_inicio DATE NOT NULL,
+	fecha_fin DATE NOT NULL,
+	descripcion TEXT,
+	UNIQUE (titulo, fecha_inicio, fecha_fin)
+);
+
+INSERT INTO public.actividades_fijas (titulo, fecha_inicio, fecha_fin, descripcion) VALUES
+('Receso académico', '2025-12-22', '2026-02-01', NULL),
+('Receso atención al público', '2026-01-01', '2026-01-25', NULL),
+('Inscripción General COPRUN 2026 M. I.–todas las carreras-', '2025-09-29', '2025-10-31', NULL),
+('Presentación y validación documentación de aspirantes COPRUN 2026 M. I.', '2025-09-29', '2025-10-31', NULL),
+('Inscripción Especial COPRUN 2026 M. I. –carreras especificadas-', '2025-11-10', '2025-11-20', NULL),
+('Presentación y validación documentación de aspirantes COPRUN 2026 Inscripción Especial M. I.', '2025-11-10', '2025-11-20', NULL),
+('Presentación analítico y/o título egresado nivel secundario aspirantes COPRUN 2026 M. I.', '2025-09-29', '2027-07-23', NULL),
+('Presentación solicitudes de eximición Talleres del COPRUN M. I. 2026', '2025-11-24', '2025-12-02', NULL),
+('Examen aspirantes sin título secundario COPRUN 2026 M.I.', '2025-12-02', '2025-12-02', NULL),
+('Entrevistas aspirantes sin título secundario COPRUN 2026 M. I.', '2025-12-09', '2025-12-19', NULL),
+('Desarrollo Talleres COPRUN 2026 M. I.', '2026-02-02', '2026-03-18', NULL),
+('Inscripción COPRUN 2026 RECUPERATORIO M. E 1°C', '2026-03-25', '2026-03-31', NULL),
+('Desarrollo COPRUN 2026 RECUPERATORIO M. E. 1°C', '2026-04-13', '2026-07-17', NULL),
+('Solicitudes de cambio/simultaneidad de carrera para el 1°Cuatrimestre 2026 -Alumnos NO ingresantes-', '2025-09-29', '2025-11-20', NULL),
+('Solicitudes de cambio/simultaneidad de carrera para el 2°Cuatrimestre 2026 -Alumnos NO ingresantes-', '2026-02-09', '2026-05-15', NULL),
+('Publicación grilla de oferta de asignaturas 1° Cuatrimestre 2026', '2026-03-04', '2026-03-04', NULL),
+('Inscripción asignaturas 1º Cuatrimestre 2026 Alumnos NO ingresantes Depto. de Cs. Económicas y Jurídicas.', '2026-03-10', '2026-03-10', NULL),
+('Inscripción asignaturas 1º Cuatrimestre 2026 Alumnos NO ingresantes Depto. de Cs. Aplicadas y Tecnología', '2026-03-11', '2026-03-11', NULL),
+('Inscripción asignaturas 1ºCuatrimestre 2026 Alumnos NO ingresantes Depto. de Humanidades y Cs. Sociales', '2026-03-12', '2026-03-12', NULL),
+('Inscripción asignaturas 1º Cuatrimestre 2026 Todos los Alumnos e Ingresantes de todos los Departamentos', '2026-03-16', '2026-03-17', NULL),
+('Publicación Inscripción asignaturas 1° Cuatrimestre 2026', '2026-03-20', '2026-03-20', NULL),
+('Bajas Inscripción asignaturas 1º Cuatrimestre 2026', '2026-03-20', '2026-04-11', NULL),
+('Desarrollo 1° Cuatrimestre 2026', '2026-03-23', '2026-07-11', NULL),
+('Inscripción asignaturas 1º Cuatrimestre 2026 Todos los Alumnos e Ingresantes de todos los Deptos.', '2026-03-30', '2026-03-31', NULL),
+('Inscripción Exámenes Turno Julio 2026', '2026-07-15', '2026-07-16', NULL),
+('Exámenes Turno Julio 2026', '2026-07-20', '2026-08-01', NULL),
+('Inscripción asignaturas 2º Cuatrimestre 2026 Alumnos NO Ingresantes Depto. de Cs. Económicas y Jurídicas', '2026-07-29', '2026-07-29', NULL),
+('Inscripción asignaturas 2º Cuatrimestre 2026 Alumnos NO Ingresantes Depto. de Cs. Aplicadas y Tecnología', '2026-07-30', '2026-07-30', NULL),
+('Inscripción asignaturas 2ºCuatrimestre 2026 Alumnos NO Ingresantes Depto. de Humanidades y Cs. Sociales', '2026-07-31', '2026-07-31', NULL),
+('Inscripción asignaturas 2º Cuatrimestre 2026 Todos los Alumnos e Ingresantes de todos los Departamentos', '2026-08-03', '2026-08-04', NULL),
+('Publicación Inscripción asignaturas 2° Cuatrimestre 2026', '2026-08-07', '2026-08-07', NULL),
+('Bajas Inscripción asignaturas 2º Cuatrimestre 2026', '2026-08-07', '2026-08-29', NULL),
+('Desarrollo 2º Cuatrimestre 2026', '2026-08-10', '2026-11-28', NULL),
+('Inscripción asignaturas 2º Cuatrimestre 2026  Todos los Alumnos e Ingresantes de todos los Dptos.', '2026-08-13', '2026-08-14', NULL),
+('Gestión de Inscripciones fuera de término', '2026-08-17', '2026-08-29', NULL),
+('Publicación grilla de oferta de Exámenes Turno Diciembre 2026', '2026-11-24', '2026-11-24', NULL),
+('Inscripción Exámenes Turno Diciembre 2026', '2026-12-01', '2026-12-02', NULL),
+('Exámenes Turno Diciembre 2026', '2026-12-07', '2026-12-19', NULL),
+('1° Ceremonia Graduación y Acto Entrega de Títulos Intermedios 2026', '2026-04-27', '2026-04-30', NULL),
+('Entrega de Diplomas de Estudios Generales e Iniciales Carreras de Grado', '2026-08-01', '2026-08-31', NULL),
+('2° Ceremonia Graduación y Acto Entrega de Títulos Intermedios 2026', '2026-08-24', '2026-08-28', NULL),
+('3° Ceremonia Graduación y Acto Entrega de Títulos Intermedios 2026', '2025-12-01', '2026-12-04', NULL),
+('Carnaval', '2026-02-16', '2026-02-17', 'Feriado'),
+('Día Nacional de la Memoria por la Verdad y la Justicia', '2026-03-24', '2026-03-24', 'Feriado'),
+('Día del Trabajo', '2026-05-01', '2026-05-01', 'Feriado'),
+('Día de la Revolución de Mayo', '2026-05-25', '2026-05-25', 'Feriado'),
+('Paso a la Inmortalidad del General Don Martín de Güemes', '2026-06-15', '2026-06-15', 'Feriado'),
+('Día de la Bandera', '2026-06-20', '2026-06-20', 'Feriado'),
+('Día de la Independencia', '2026-07-09', '2026-07-09', 'Feriado'),
+('Día del Estudiante', '2026-09-21', '2026-09-21', 'Feriado'),
+('Día del Respeto a la Diversidad Cultural', '2026-10-12', '2026-10-12', 'Feriado'),
+('Día de la Soberanía Nacional', '2026-11-23', '2026-11-23', 'Feriado'),
+('Día del No Docente', '2026-11-26', '2026-11-26', 'Feriado'),
+('Día de la Inmaculada Concepción de María', '2026-12-08', '2026-12-08', 'Feriado'),
+('Navidad', '2026-12-25', '2026-12-25', 'Feriado')
+ON CONFLICT DO NOTHING;
+
+COMMIT;
